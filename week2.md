@@ -20,13 +20,13 @@ Monitoring Approach
 
 The following tools will be used to monitor system performance:
 
-| Resource Type        | Tool(s) Used                 | Purpose                                         |
-|----------------------|-----------------------------|-------------------------------------------------|
-| CPU Usage            | top, htop, mpstat            | Monitor real-time and average CPU load          |
-| Memory Usage         | free -h, vmstat              | Analyse RAM and swap utilisation                |
-| Disk Usage           | df -h, iostat                | Measure disk space and disk I/O performance     |
-| Network Performance  | ping, ss, iftop              | Measure latency, throughput, connections        |
-| System Load          | uptime, top                  | Evaluate system load averages over time         |
+| Resource Type | Tool(s) Used | Purpose |
+|--------------|-------------|---------|
+| CPU Usage | top, htop, mpstat | Monitor real-time and average CPU load |
+| Memory Usage | free -h, vmstat | Analyse RAM and swap utilisation |
+| Disk Usage | df -h, iostat | Measure disk space and disk I/O performance |
+| Network Performance | ping, ss, iftop | Measure latency, throughput, connections |
+| System Load | uptime, top | Evaluate system load averages over time |
 
 Testing Stages
 

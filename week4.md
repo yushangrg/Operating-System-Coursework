@@ -19,7 +19,6 @@ ssh-copy-id student@192.168.x.x
 sudo nano /etc/ssh/sshd_config
 ```
 ## 4.Changed settings:
-
 PasswordAuthentication no
 PubkeyAuthentication yes
 PermitRootLogin no

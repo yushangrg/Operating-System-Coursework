@@ -8,8 +8,10 @@ Objective: Replace password authentication with key-based authentication for enh
 
 ## 1. Generated SSH key pair on workstation:
 ```bash
-ssh-keygen -t rsa -b 4096 -C "student_id@workstation"
+ssh-keygen -t rsa -b 4096 -C "A00022006@yushan-VirtualBox"
 ```
+<img width="877" height="550" alt="Screenshot 2025-12-25 213425" src="https://github.com/user-attachments/assets/23ff9181-36b0-4959-8f43-bdfff1833ca8" />
+
 ## 2.Copied public key to server:
 ```bash
 ssh-copy-id student@192.168.x.x
@@ -18,12 +20,62 @@ ssh-copy-id student@192.168.x.x
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
-## 4.Changed settings:
-PasswordAuthentication no
-PubkeyAuthentication yes
-PermitRootLogin no
+## Changed settings:
+- PasswordAuthentication no
+- PubkeyAuthentication yes
+- PermitRootLogin no
 
-## 5.Restarted SSH service:
+## 5. Restarted SSH service:
 ```bash
 sudo systemctl restart sshd
 ```
+## 2. Firewall Configuration (UFW)
+Objective: Configure firewall to permit SSH access only from the specific workstation IP.
+
+## Enabled UFW:
+```bash
+sudo ufw enable
+```
+## Set default policies:
+```bash
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+```
+## Added rule for workstation IP only:
+```bash
+sudo ufw allow from 192.168.x.x to any port 22
+```
+## Verified rules:
+```bash
+sudo ufw status verbose
+```
+# 3. User Management and Privilege Configuration
+Objective: Create non-root administrative user with sudo privileges.
+
+## Created new user:
+```bash
+sudo adduser adminuser
+```
+## Added to sudo group:
+```bash
+sudo usermod -aG sudo adminuser
+```
+## Verifying Sudo Access:
+```bash
+sudo whoami
+```
+# 4. SSH Access Evidence (Remote Administration)
+
+All system administration tasks were performed remotely from the workstation.
+Example Remote Commands
+```bash
+hostname
+uptime
+whoami
+```
+# 5. Firewall Ruleset Documentation
+Full Ruleset
+```bash
+sudo ufw status numbered
+```
+ip a

@@ -50,7 +50,7 @@ Performance data will be collected manually and via scripts, recorded in tables,
 The following checklist defines the minimum security baseline for the Linux server.
 Each control is justified based on common Linux server security best practices.
 
-SSH Hardening
+## SSH Hardening
 
 Disable root login over SSH
 
@@ -62,7 +62,7 @@ Restrict SSH access to a single trusted workstation IP
 
 Use a non-default SSH port (where appropriate)
 
-Firewall Configuration
+## Firewall Configuration
 
 Enable firewall (UFW)
 
@@ -72,7 +72,7 @@ Deny all other incoming connections by default
 
 Log dropped packets for audit purposes
 
-Mandatory Access Control (MAC)
+## Mandatory Access Control (MAC)
 
 Enable AppArmor (default on Ubuntu Server)
 
@@ -80,7 +80,7 @@ Ensure profiles are enforced, not in complain mode
 
 Monitor AppArmor logs for denied actions
 
-Automatic Updates
+## Automatic Updates
 
 Enable unattended security updates
 
@@ -88,7 +88,7 @@ Ensure only security patches are installed automatically
 
 Verify update logs regularly
 
-User Privilege Management
+## User Privilege Management
 
 Create a non-root administrative user
 
@@ -98,7 +98,7 @@ Remove unnecessary users and groups
 
 Apply least privilege principle
 
-Network Security
+## Network Security
 
 Disable unused network services
 

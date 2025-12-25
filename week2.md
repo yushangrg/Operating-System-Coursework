@@ -1,186 +1,169 @@
 # Week 2
-## 1. Performance Testing Plan
+Overview
+
+This week focuses on designing a security baseline and a performance testing methodology for the Linux server.
+Before implementing any security controls, it is essential to plan what will be protected, why it must be protected, and how performance and security will be measured objectively.
+
+The outcome of this week is a clear, structured plan that will guide all security implementations and performance testing in later weeks.
+
+1. Performance Testing Plan
+Objective
+
+The objective of performance testing is to evaluate how the Linux operating system behaves under different workloads while being administered remotely via SSH. The testing focuses on CPU usage, memory usage, disk I/O, network performance, and system responsiveness.
+
 Remote Monitoring Methodology
 
-The server system runs headless and is accessed only via SSH from the workstation. All monitoring and testing will therefore be performed remotely using command-line tools.
+All monitoring will be performed remotely from the workstation system using SSH.
+This reflects real-world server administration practices and ensures compliance with the coursework requirement that the server is managed headlessly.
 
-Monitoring approach:
+Monitoring Approach
 
-Monitoring commands will be executed via SSH from the workstation.
+The following tools will be used to monitor system performance:
 
-Lightweight CLI tools are used to avoid distorting performance results.
-
-Measurements are captured during:
-
-Idle baseline
-
-Active workload execution
-
-Post-optimisation testing
-
-Data collection principles:
-
-Use consistent time intervals
-
-Record numerical outputs
-
-Compare results before and after optimisation
-
-Store results in structured tables
-
-Performance Metrics to be Collected
-Metric	Tool(s)	Purpose
-CPU usage	top, htop, mpstat	Identify CPU-bound workloads
-Memory usage	free -h, vmstat	Detect memory pressure and swapping
-Disk I/O	iostat, df -h	Measure read/write bottlenecks
-Network	ping, iperf3	Measure latency and throughput
-Process load	ps, top	Analyse process-level resource usage
-System uptime	uptime	Verify system stability
+Resource Type	Tool(s) Used	Purpose
+CPU Usage	top, htop, mpstat	Monitor real-time and average CPU load
+Memory Usage	free -h, vmstat	Analyse RAM and swap utilisation
+Disk Usage	df -h, iostat	Measure disk space and I/O performance
+Network Performance	ping, ss, iftop	Measure latency, throughput, and connections
+System Load	uptime, top	Evaluate load averages over time
 Testing Stages
 
+Performance testing will be conducted in the following stages:
+
 Baseline Testing
-
-No workload running
-
-Captures idle system state
+Measure system performance immediately after installation with minimal services running.
 
 Load Testing
-
-Application or service running
-
-Measures peak resource usage
-
-Bottleneck Identification
-
-Identify CPU, RAM, disk, or network constraints
+Measure performance while running selected applications representing different workload types (CPU, memory, I/O, and network intensive).
 
 Optimisation Testing
+Apply system tuning and configuration improvements, then re-measure performance to quantify improvements.
 
-Apply tuning (e.g. service configuration changes)
+Data Collection
 
-Measure quantitative improvement
-## 2. Security Configuration Checklist
-This checklist defines the minimum security baseline that the server must meet before being considered production-ready.
+Performance data will be collected manually and via scripts, recorded in tables, and visualised using charts in later weeks.
+
+2. Security Configuration Checklist
+
+The following checklist defines the minimum security baseline for the Linux server.
+Each control is justified based on common Linux server security best practices.
 
 SSH Hardening
 
-Disable root login
+Disable root login over SSH
 
-Use key-based authentication
+Enforce key-based authentication
 
 Disable password authentication
 
-Restrict SSH access to one trusted workstation IP
+Restrict SSH access to a single trusted workstation IP
 
-Change default SSH configuration settings
+Use a non-default SSH port (where appropriate)
 
 Firewall Configuration
 
 Enable firewall (UFW)
 
-Allow SSH from one specific IP only
+Allow SSH only from the workstation IP
 
-Deny all other incoming traffic
+Deny all other incoming connections by default
 
-Log denied connections
+Log dropped packets for audit purposes
 
-Mandatory Access Control
+Mandatory Access Control (MAC)
 
-Use AppArmor (Ubuntu default)
+Enable AppArmor (default on Ubuntu Server)
 
-Ensure enforced mode is enabled
+Ensure profiles are enforced, not in complain mode
 
-Verify active security profiles
+Monitor AppArmor logs for denied actions
 
 Automatic Updates
 
-Enable unattended security upgrades
+Enable unattended security updates
 
-Ensure critical patches are applied automatically
+Ensure only security patches are installed automatically
 
-Verify update logs
+Verify update logs regularly
 
 User Privilege Management
 
 Create a non-root administrative user
 
-Use sudo for privilege escalation
+Use sudo for privileged commands
 
-Remove unnecessary user accounts
+Remove unnecessary users and groups
 
-Enforce strong password policies
+Apply least privilege principle
 
 Network Security
 
-Minimise exposed services
+Disable unused network services
 
-Disable unused ports
+Verify listening ports using ss or netstat
 
-Verify listening services using ss or netstat
-## 3. Threat Model
+Prevent unnecessary external exposure
+
+3. Threat Model
+
+This threat model identifies realistic threats to the Linux server and documents mitigation strategies aligned with the planned security controls.
+
 Threat 1: Brute-Force SSH Attacks
 
 Description:
-Attackers attempt repeated login attempts over SSH to guess credentials.
+Attackers may attempt repeated login attempts to gain unauthorised SSH access.
 
 Impact:
+Compromise of the server, data theft, or system misuse.
 
-Unauthorized system access
-
-Data compromise
-
-Full system takeover if root access is obtained
-
-Mitigation Strategies:
+Mitigation:
 
 Key-based SSH authentication
 
-Disable password authentication
+Password authentication disabled
 
-Use firewall IP restrictions
+Firewall rules restricting SSH access
 
-Implement fail2ban (later phase)
+Fail2ban (implemented in later weeks)
 
 Threat 2: Privilege Escalation
 
 Description:
-An attacker gains access to a low-privileged user account and escalates privileges.
+A compromised user account could attempt to gain root privileges.
 
 Impact:
+Full system compromise and loss of control.
 
-Root-level compromise
+Mitigation:
 
-Modification of system files
-
-Persistence mechanisms installed
-
-Mitigation Strategies:
-
-Principle of least privilege
+Use of non-root user accounts
 
 Controlled sudo access
 
-Mandatory access control (AppArmor)
+Mandatory Access Control (AppArmor)
 
-Regular auditing of users and permissions
+Regular auditing of user privileges
 
-Threat 3: Unpatched Vulnerabilities
+Threat 3: Unauthorised Network Access
 
 Description:
-Outdated packages contain known security vulnerabilities.
+Open ports or unnecessary services may expose the server to network-based attacks.
 
 Impact:
+Remote exploitation of services or denial-of-service attacks.
 
-Remote code execution
+Mitigation:
 
-Denial of service
+Firewall with default deny rules
 
-Exploitation of known CVEs
+Minimal service installation
 
-Mitigation Strategies:
+Regular port scanning and service review
 
-Automatic security updates
+Reflection
 
-Regular system updates
+This week highlighted the importance of planning before implementation.
+By defining a security baseline and performance testing methodology early, later configuration decisions can be evaluated objectively rather than subjectively.
 
-Vulnerability scanning 
+The threat modelling exercise reinforced how common attacks exploit weak authentication, excessive privileges, and poor network controls.
+Designing mitigations in advance ensures that security controls are implemented systematically rather than reactively.

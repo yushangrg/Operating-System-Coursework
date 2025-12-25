@@ -6,7 +6,7 @@ Before implementing any security controls, it is essential to plan what will be 
 
 The outcome of this week is a clear, structured plan that will guide all security implementations and performance testing in later weeks.
 
-1. Performance Testing Plan
+## 1. Performance Testing Plan
 Objective
 
 The objective of performance testing is to evaluate how the Linux operating system behaves under different workloads while being administered remotely via SSH. The testing focuses on CPU usage, memory usage, disk I/O, network performance, and system responsiveness.
@@ -20,12 +20,14 @@ Monitoring Approach
 
 The following tools will be used to monitor system performance:
 
-Resource Type	Tool(s) Used	Purpose
-CPU Usage	top, htop, mpstat	Monitor real-time and average CPU load
-Memory Usage	free -h, vmstat	Analyse RAM and swap utilisation
-Disk Usage	df -h, iostat	Measure disk space and I/O performance
-Network Performance	ping, ss, iftop	Measure latency, throughput, and connections
-System Load	uptime, top	Evaluate load averages over time
+| Resource Type        | Tool(s) Used                 | Purpose                                         |
+|----------------------|-----------------------------|-------------------------------------------------|
+| CPU Usage            | top, htop, mpstat            | Monitor real-time and average CPU load          |
+| Memory Usage         | free -h, vmstat              | Analyse RAM and swap utilisation                |
+| Disk Usage           | df -h, iostat                | Measure disk space and disk I/O performance     |
+| Network Performance  | ping, ss, iftop              | Measure latency, throughput, connections        |
+| System Load          | uptime, top                  | Evaluate system load averages over time         |
+
 Testing Stages
 
 Performance testing will be conducted in the following stages:
@@ -43,7 +45,7 @@ Data Collection
 
 Performance data will be collected manually and via scripts, recorded in tables, and visualised using charts in later weeks.
 
-2. Security Configuration Checklist
+## 2. Security Configuration Checklist
 
 The following checklist defines the minimum security baseline for the Linux server.
 Each control is justified based on common Linux server security best practices.
@@ -104,19 +106,19 @@ Verify listening ports using ss or netstat
 
 Prevent unnecessary external exposure
 
-3. Threat Model
+## 3. Threat Model
 
 This threat model identifies realistic threats to the Linux server and documents mitigation strategies aligned with the planned security controls.
 
-Threat 1: Brute-Force SSH Attacks
+## Threat 1: Brute-Force SSH Attacks
 
-Description:
+## Description:
 Attackers may attempt repeated login attempts to gain unauthorised SSH access.
 
-Impact:
+## Impact:
 Compromise of the server, data theft, or system misuse.
 
-Mitigation:
+## Mitigation:
 
 Key-based SSH authentication
 
@@ -126,15 +128,15 @@ Firewall rules restricting SSH access
 
 Fail2ban (implemented in later weeks)
 
-Threat 2: Privilege Escalation
+## Threat 2: Privilege Escalation
 
-Description:
+## Description:
 A compromised user account could attempt to gain root privileges.
 
-Impact:
+## Impact:
 Full system compromise and loss of control.
 
-Mitigation:
+## Mitigation:
 
 Use of non-root user accounts
 
@@ -144,15 +146,15 @@ Mandatory Access Control (AppArmor)
 
 Regular auditing of user privileges
 
-Threat 3: Unauthorised Network Access
+## Threat 3: Unauthorised Network Access
 
-Description:
+## Description:
 Open ports or unnecessary services may expose the server to network-based attacks.
 
-Impact:
+## Impact:
 Remote exploitation of services or denial-of-service attacks.
 
-Mitigation:
+## Mitigation:
 
 Firewall with default deny rules
 
@@ -160,7 +162,7 @@ Minimal service installation
 
 Regular port scanning and service review
 
-Reflection
+## Reflection
 
 This week highlighted the importance of planning before implementation.
 By defining a security baseline and performance testing methodology early, later configuration decisions can be evaluated objectively rather than subjectively.

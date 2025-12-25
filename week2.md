@@ -6,7 +6,7 @@ Before implementing any security controls, it is essential to plan what will be 
 
 The outcome of this week is a clear, structured plan that will guide all security implementations and performance testing in later weeks.
 
-## 1. Performance Testing Plan
+# 1. Performance Testing Plan
 Objective
 
 The objective of performance testing is to evaluate how the Linux operating system behaves under different workloads while being administered remotely via SSH. The testing focuses on CPU usage, memory usage, disk I/O, network performance, and system responsiveness.
@@ -45,7 +45,7 @@ Data Collection
 
 Performance data will be collected manually and via scripts, recorded in tables, and visualised using charts in later weeks.
 
-## 2. Security Configuration Checklist
+# 2. Security Configuration Checklist
 
 The following checklist defines the minimum security baseline for the Linux server.
 Each control is justified based on common Linux server security best practices.
@@ -146,7 +146,7 @@ Mandatory Access Control (AppArmor)
 
 Regular auditing of user privileges
 
-## Threat 3: Unauthorised Network Access
+# Threat 3: Unauthorised Network Access
 
 ## Description:
 Open ports or unnecessary services may expose the server to network-based attacks.

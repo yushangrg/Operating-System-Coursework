@@ -23,7 +23,7 @@ The following tools will be used to monitor system performance:
 | Resource Type | Tool(s) Used | Purpose |
 | :--- | :--- | :--- |
 | CPU Usage | `top`, `htop`, `mpstat` | Monitor real-time and average CPU load |
-| Memory Usage | `free -h`, `vmstat` | Analyze RAM and swap utilization |
+| Memory Usage | `free -h`, `vmstat` | Analyse RAM and swap utilisation |
 | Disk Usage | `df -h`, `iostat` | Measure disk space and I/O performance |
 | Network Performance | `ping`, `ss`, `iftop` | Measure latency, throughput, and connections |
 | System Load | `uptime`, `top` | Evaluate load averages over time |

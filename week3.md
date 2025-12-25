@@ -23,20 +23,29 @@ The table below summarises the selected applications, the workload type they rep
 All installations were performed remotely via SSH on the server using the package manager.
 
 Update Package Index
+```bash
 sudo apt update
+```
 
 Install stress-ng
+```bash
 sudo apt install stress-ng -y
+```
 
 Install fio
+```bash
 sudo apt install fio -y
+```
 
 Install iperf3
+```bash
 sudo apt install iperf3 -y
+```
 
 Install nginx
+```bash
 sudo apt install nginx -y
-
+```
 
 After installation, each application was verified using version or status commands:
 

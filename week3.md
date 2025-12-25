@@ -18,7 +18,36 @@ The table below summarises the selected applications, the workload type they rep
 | `iperf3`    | Network-intensive  | Measures network bandwidth and throughput             | Used to analyse network performance and latency over SSH connections                    |
 | `nginx`     | Server application | Lightweight web server                                | Represents a real-world server workload and allows monitoring of service response times |
 
-#3.4 Expected Resource Profiles
+# 3.3 Installation Documentation (SSH-based)
+
+All installations were performed remotely via SSH on the server using the package manager.
+
+Update Package Index
+sudo apt update
+
+Install stress-ng
+sudo apt install stress-ng -y
+
+Install fio
+sudo apt install fio -y
+
+Install iperf3
+sudo apt install iperf3 -y
+
+Install nginx
+sudo apt install nginx -y
+
+
+After installation, each application was verified using version or status commands:
+
+stress-ng --version
+fio --version
+iperf3 --version
+systemctl status nginx
+
+<img width="1196" height="703" alt="Screenshot 2025-12-25 205738" src="https://github.com/user-attachments/assets/66e48bf4-ddcc-44f6-882b-4d1a77f482cb" />
+
+# 3.4 Expected Resource Profiles
 
 Before testing, expected system behaviour for each workload was identified to provide a baseline for later comparison.
 

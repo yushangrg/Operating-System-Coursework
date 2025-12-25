@@ -48,12 +48,12 @@ sudo apt install nginx -y
 ```
 
 After installation, each application was verified using version or status commands:
-
+```bash
 stress-ng --version
 fio --version
 iperf3 --version
 systemctl status nginx
-
+```
 <img width="1196" height="703" alt="Screenshot 2025-12-25 205738" src="https://github.com/user-attachments/assets/66e48bf4-ddcc-44f6-882b-4d1a77f482cb" />
 
 # 3.4 Expected Resource Profiles

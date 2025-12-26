@@ -148,12 +148,12 @@ chmod +x monitor-server.sh
 <img width="1597" height="953" alt="image" src="https://github.com/user-attachments/assets/8fd10ff1-214c-43dc-a40c-ba15b39bd267" />
 
 # 6. Security vs Performance Considerations
-| Control             | Security Benefit                        | Performance Impact   |
-| :------------------ | :-------------------------------------- | :------------------ |
-| AppArmor            | Limits damage from compromised services | Negligible          |
-| Unattended Upgrades | Reduces vulnerability window            | Minor during updates |
-| Fail2Ban            | Prevents brute-force attacks            | Minimal             |
-| Firewall (UFW)      | Network traffic restriction             | Negligible          |
+| Control | Security Benefit | Performance Impact |
+|---|---|---|
+| AppArmor | Limits damage from compromised services | Negligible |
+| Unattended Upgrades | Reduces vulnerability window | Minor during updates |
+| Fail2Ban | Prevents brute-force attacks | Minimal |
+| Firewall (UFW) | Network traffic restriction | Negligible |
 
 The security mechanisms introduced provide significant protection while maintaining system efficiency.
 

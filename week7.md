@@ -123,4 +123,10 @@ sudo ss -tulpn
 ```
 <img width="1258" height="339" alt="Screenshot 2025-12-26 070751" src="https://github.com/user-attachments/assets/a72c17a2-3101-4503-bfc4-5810c1892c9f" />
 
+| Service               | Status          | Purpose / Why it’s Needed        | Risk if Exposed                 | Mitigation Measures                                  |
+|-----------------------|-----------------|----------------------------------|----------------------------------|------------------------------------------------------|
+| SSH                   | Running         | Remote server administration     | Brute-force attacks, key theft   | SSH key-only login, Fail2Ban, firewall allowlist      |
+| Unattended-Upgrades   | Running (Timer) | Automatic security patching      | Low                              | Verified configuration, update logs                  |
+| Fail2Ban              | Running         | Blocks repeated login attempts   | Low                              | Log monitoring, tuned ban rules                      |
 
+# 7. System Configuration Review (Security Baseline Check)

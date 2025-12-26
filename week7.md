@@ -137,6 +137,29 @@ sudo ss -tulpn
 
 # 8. Network Security Testing Result
 
+## Basic Port Scan
+```bash
+nmap -Pn 192.168.56.101
+```
+<img width="698" height="198" alt="Screenshot 2025-12-26 074438" src="https://github.com/user-attachments/assets/2e92a69b-6ebc-4902-9e3b-9e1e74fad18d" />
+
+## Service & Version Detection
+```bash
+nmap -Pn -sV 192.168.56.101
+```
+<img width="961" height="247" alt="Screenshot 2025-12-26 074548" src="https://github.com/user-attachments/assets/58aa7c01-f3ca-4bf9-bfea-35a71f8cfa2e" />
+
+## Script Scan
+```bash
+nmap -Pn -sC 192.168.56.101
+```
+
+## Verification Against Local Services
+```bash
+sudo ss -tulpn
+```
+<img width="1213" height="485" alt="Screenshot 2025-12-26 075243" src="https://github.com/user-attachments/assets/132eade5-8665-408d-8b7b-64722362c548" />
+
 
 # 9. Week 7 Reflection (What I Learned)
 

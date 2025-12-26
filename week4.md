@@ -28,6 +28,8 @@ ssh-copy-id student@192.168.x.x
 sudo nano /etc/ssh/sshd_config
 ```
 ## Changed settings:
+![WhatsApp Image 2025-12-26 at 05 55 57](https://github.com/user-attachments/assets/776ab0b8-3596-4552-a1a6-f8e6c02bbbe4)
+
 - PasswordAuthentication no
 - PubkeyAuthentication yes
 - PermitRootLogin no

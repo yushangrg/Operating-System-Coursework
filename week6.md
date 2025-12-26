@@ -134,3 +134,7 @@ Using noatime reduced metadata overhead, improving disk throughput and lowering 
 |--------------------|--------------------------------|--------------------------------------------------|
 | Lower swappiness   | Memory pressure / swapping     | Less swap activity, faster response under load   |
 | noatime mount      | Disk metadata overhead         | Higher throughput, lower disk latency            |
+
+# 7 Reflection (Critical analysis)
+
+This week improved my understanding of how system performance is measured and analysed under different workloads. By monitoring CPU, memory, disk, and network behaviour, I learned how to identify performance bottlenecks using tools such as mpstat, free, iostat, and ping. I also gained insight into how system configuration changes, such as reducing swappiness and adjusting disk mount options, can significantly improve performance without hardware upgrades. Overall, this week strengthened my ability to interpret performance metrics and apply practical optimisations to improve system efficiency.

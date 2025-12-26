@@ -3,7 +3,7 @@
 - Student ID: A00022006
 - Module: Operating Systems (CMPN202)
 - Programme: BSc Computer Science
-- Institution: University of Roehampton Londo
+- Institution: University of Roehampton London
 
 # Project Overview
 

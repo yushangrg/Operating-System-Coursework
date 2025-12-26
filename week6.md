@@ -7,12 +7,12 @@ This week focused on executing detailed performance testing and analyzing operat
 
 For each selected application/service, I monitored and compared the following metrics:
 
-CPU Usage: Measured using top, htop, and mpstat
-Memory Usage: Tracked with free, vmstat, and process-specific monitoring
-Disk I/O Performance: Evaluated using iotop, iostat, and dd commands
-Network Performance: Measured with iperf3, netstat, and iftop
-System Latency: Monitored using ping and custom response time scripts
-Service Response Times: Tracked with curl timing and application-specific metrics
+- CPU Usage: Measured using top, htop, and mpstat
+- Memory Usage: Tracked with free, vmstat, and process-specific monitoring
+- Disk I/O Performance: Evaluated using iotop, iostat, and dd commands
+- Network Performance: Measured with iperf3, netstat, and iftop
+- System Latency: Monitored using ping and custom response time scripts
+- Service Response Times: Tracked with curl timing and application-specific metrics
 
 ## 2.2 Testing Scenarios Implemented
 For each application/service, I conducted:

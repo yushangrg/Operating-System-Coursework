@@ -107,8 +107,17 @@ Verify listening ports using ss or netstat
 Prevent unnecessary external exposure
 
 ## 3. Threat Model
+## Scope and assumptions:
 
-This threat model identifies realistic threats to the Linux server and documents mitigation strategies aligned with the planned security controls.
+System: Linux server VM administered remotely via SSH.
+Assets:
+
+- Server integrity (no unauthorised changes)
+- Credentials/keys and user accounts
+- Availability of the server (no lockouts / DoS)
+- Confidentiality of configuration and logs
+
+Attacker model: Someone who can reach the server over the network (within the VM network) and attempts unauthorised access.
 
 ## Threat 1: Brute-Force SSH Attacks
 

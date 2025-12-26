@@ -12,6 +12,13 @@ ssh-keygen -t rsa -b 4096 -C "A00022006@yushan-VirtualBox"
 ```
 <img width="877" height="550" alt="Screenshot 2025-12-25 213425" src="https://github.com/user-attachments/assets/23ff9181-36b0-4959-8f43-bdfff1833ca8" />
 
+## Create user and add to sudo group
+<img width="874" height="76" alt="Screenshot 2025-12-26 053940" src="https://github.com/user-attachments/assets/8c5252a5-fce3-4df5-95fb-2e27f574feed" />
+
+## Verify sudo works
+<img width="709" height="186" alt="image" src="https://github.com/user-attachments/assets/8bcc07ef-a570-4115-997c-ba3b09b3cc50" />
+
+
 ## 2.Copied public key to server:
 ```bash
 ssh-copy-id student@192.168.x.x

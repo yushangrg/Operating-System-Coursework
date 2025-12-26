@@ -89,5 +89,38 @@ SSH configuration was reviewed to ensure compliance with best practices.
 ```bash
 sudo sshd -T | grep -E "passwordauthentication|permitrootlogin"
 ```
+![WhatsApp Image 2025-12-26 at 07 00 04](https://github.com/user-attachments/assets/73e7f22c-825a-47bc-8eca-41f56e4671cf)
+
+## 4.2 Firewall verification 
+
+Show full ruleset and confirm it only allows SSH from your workstation IP:
+```bash
+sudo ufw status verbose
+sudo ufw status numbered
+```
+<img width="538" height="381" alt="Screenshot 2025-12-26 070232" src="https://github.com/user-attachments/assets/9bf2a868-2253-44c1-8343-241896e1afe6" />
+
+# 5. Access Control Verification (SELinux/AppArmor)
+## 5.1 Confirm Status
+
+AppArmor
+```bash
+sudo aa-status
+sudo apparmor_status
+```
+<img width="439" height="778" alt="Screenshot 2025-12-26 070431" src="https://github.com/user-attachments/assets/5b2903bf-8b2f-4700-b70f-4ee30b6e4310" />
+
+# 6. Service Inventory + Justification
+## 6.1 List running services
+```bash
+systemctl --type=service --state=running
+```
+<img width="935" height="445" alt="Screenshot 2025-12-26 070613" src="https://github.com/user-attachments/assets/ee98bb67-496b-4aa8-a8e4-ded529652e81" />
+
+## 6.2 List listening ports + owning process
+```bash
+sudo ss -tulpn
+```
+<img width="1258" height="339" alt="Screenshot 2025-12-26 070751" src="https://github.com/user-attachments/assets/a72c17a2-3101-4503-bfc4-5810c1892c9f" />
 
 

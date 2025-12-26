@@ -130,3 +130,11 @@ sudo ss -tulpn
 | Fail2Ban              | Running         | Blocks repeated login attempts   | Low                              | Log monitoring, tuned ban rules                      |
 
 # 7. System Configuration Review (Security Baseline Check)
+```bash
+./security-baseline.sh <server_ip> <admin_user>
+```
+<img width="1130" height="661" alt="Screenshot 2025-12-26 072324" src="https://github.com/user-attachments/assets/eae94cc6-cf3c-4c4f-8aad-56b93620e1fd" />
+
+# 8. Week 7 Reflection (What I Learned)
+
+This week showed me that a default Linux installation is functional but not securely hardened by default. Running Lynis highlighted insecure assumptions such as unnecessary services being enabled, weak default configurations, and missing hardening settings that are not obvious during normal use. Seeing the Lynis hardening score and warnings made security issues concrete rather than theoretical. After reviewing real evidence, I disabled unused services, verified firewall rules, and confirmed that only SSH was exposed to the network. I also validated that SSH was hardened using key-based authentication and that access controls were correctly enforced. These changes directly improved my system’s attack surface and audit results. However, I also learned that stronger security often reduces convenience. For example, restricting SSH access by IP improves security but makes administration harder if the client IP changes. Overall, this phase reinforced that security is a balance between protection, usability, and maintainability rather than a one-time configuration.

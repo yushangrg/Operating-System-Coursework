@@ -5,14 +5,23 @@ This week focused on executing detailed performance testing and analyzing operat
 # 2. Testing Methodology
 ## 2.1 Performance Metrics Monitored
 
-For each selected application/service, I monitored and compared the following metrics:
+## Tools used (what each measures)
 
-- CPU Usage: Measured using top, htop, and mpstat
-- Memory Usage: Tracked with free, vmstat, and process-specific monitoring
-- Disk I/O Performance: Evaluated using iotop, iostat, and dd commands
-- Network Performance: Measured with iperf3, netstat, and iftop
-- System Latency: Monitored using ping and custom response time scripts
-- Service Response Times: Tracked with curl timing and application-specific metrics
+## Server-side (collected over SSH):
+
+- uptime, top/ps, pidstat → process + CPU behaviour
+- free -h, /proc/meminfo → memory usage / caching
+- iostat -xz 1, vmstat 1 → disk wait, I/O saturation, run queue
+- ss -tulpn → sockets & service status
+
+## Workload generators (run from workstation unless noted):
+
+- CPU: stress-ng --cpu ...
+- Memory: stress-ng --vm ...
+- Disk I/O: fio ...
+- Network throughput: iperf3
+- Latency: ping, mtr
+- Service response: curl -w, wrk (HTTP) or app-specific client
 
 ## 2.2 Testing Scenarios Implemented
 For each application/service, I conducted:

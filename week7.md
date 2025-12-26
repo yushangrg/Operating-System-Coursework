@@ -68,6 +68,13 @@ sudo lynis audit system
 
 Network exposure was assessed from the workstation system using nmap.
 
+# Install and run
+```bash
+sudo apt update
+sudo apt install -y nmap
+```
+<img width="807" height="425" alt="Screenshot 2025-12-26 065801" src="https://github.com/user-attachments/assets/a939f94c-69b6-40d2-9941-876cb9b4bd94" />
+
 ### 3.1 Port Scan Command
 ```bash
 sudo nmap -sS -Pn 192.168.56.101

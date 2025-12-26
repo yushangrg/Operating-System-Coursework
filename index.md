@@ -1,9 +1,9 @@
 # Index
-Student Name: Yushan Gurung
-Student ID: A00022006
-Module: Operating Systems (CMPN202)
-Programme: BSc Computer Science
-Institution: University of Roehampton Londo
+- Student Name: Yushan Gurung
+- Student ID: A00022006
+- Module: Operating Systems (CMPN202)
+- Programme: BSc Computer Science
+- Institution: University of Roehampton Londo
 
 # Project Overview
 

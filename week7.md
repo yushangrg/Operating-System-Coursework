@@ -7,10 +7,10 @@ In Week 7, a full security audit was conducted on the Linux server to evaluate t
 
 The server is deployed as a headless Linux server, administered exclusively via SSH from a trusted workstation. The following baseline controls are in place:
 
-SSH key-based authentication (password login disabled)
-Firewall restricting SSH access to a single workstation IP
-Non-root administrative user with sudo privileges
-Automatic security updates enabled
-AppArmor mandatory access control enforced
-Fail2ban intrusion prevention enabled
+- SSH key-based authentication (password login disabled)
+- Firewall restricting SSH access to a single workstation IP
+- Non-root administrative user with sudo privileges
+- Automatic security updates enabled
+- AppArmor mandatory access control enforced
+- Fail2ban intrusion prevention enabled
 This audit verifies that these controls are active and correctly configured.

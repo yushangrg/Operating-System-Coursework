@@ -105,7 +105,7 @@ Execution (via SSH)
 chmod +x security-baseline.sh
 ./security-baseline.sh
 ```
-![WhatsApp Image 2025-12-26 at 00 31 42](https://github.com/user-attachments/assets/d1a2891b-4b73-40e7-840d-a156a075aa3d)
+<img width="1151" height="661" alt="Screenshot 2025-12-26 072721" src="https://github.com/user-attachments/assets/79e2c70f-f47c-42fc-b1a4-13eba4c33f1c" />
 
 # 5. Remote Monitoring Script
 Purpose

@@ -94,3 +94,46 @@ Full Ruleset
 sudo ufw status numbered
 ```
 ip a
+
+## Show service and process evidence
+
+<img width="941" height="799" alt="Screenshot 2025-12-26 060919" src="https://github.com/user-attachments/assets/bccac398-ceac-4238-b581-eddd6fade496" />
+<img width="683" height="206" alt="Screenshot 2025-12-26 060940" src="https://github.com/user-attachments/assets/821ae744-fe52-44a4-8b29-86b69b63474f" />
+
+# Before/after comparison summary (what changed and why)
+SSH (/etc/ssh/sshd_config)
+
+Before
+
+- Password auth may have been enabled by default.
+- Root SSH login may have been permitted or “prohibit-password”.
+
+After
+
+- PasswordAuthentication no → reduces brute-force success risk.
+- PermitRootLogin no → removes high-value target over the network.
+- PubkeyAuthentication yes → uses asymmetric keys (stronger than passwords).
+
+Firewall (UFW)
+
+Before
+
+- Inbound policy potentially open/undefined.
+
+After
+
+- Default deny incoming.
+- Only allow TCP/22 from WORKSTATION_IP → tight network access control.
+
+# Problems encountered + fixes 
+
+Issue: Restarting SSH can lock you out if config is wrong.
+Fix: Used sshd -t before restarting to validate syntax.
+
+Issue: UFW enable may warn about disrupting SSH.
+Fix: Ensured the allow rule for WORKSTATION_IP:22 was added before enabling.
+
+# Reflection: security vs usability trade-off
+
+Key-based auth is more secure than passwords, but it introduces usability overhead (key management, passphrases, and access recovery). Limiting SSH to a single workstation IP reduces attack surface significantly, but it can block legitimate access if the workstation IP changes so documenting IP addressing and having a controlled method to update rules is essential.
+

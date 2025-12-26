@@ -5,10 +5,8 @@ This week focused on executing detailed performance testing and analyzing operat
 # 2. Testing Methodology
 ## 2.1 Performance Metrics Monitored
 
-## Tools used (what each measures)
-
 ## Server-side (collected over SSH):
-
+Tools used (what each measures)
 - uptime, top/ps, pidstat → process + CPU behaviour
 - free -h, /proc/meminfo → memory usage / caching
 - iostat -xz 1, vmstat 1 → disk wait, I/O saturation, run queue

@@ -149,12 +149,11 @@ chmod +x monitor-server.sh
 
 # 6. Security vs Performance Considerations
 | Control | Security Benefit | Performance Impact |
-|---|---|---|
+| :--- | :--- | :--- |
 | AppArmor | Limits damage from compromised services | Negligible |
 | Unattended Upgrades | Reduces vulnerability window | Minor during updates |
 | Fail2Ban | Prevents brute-force attacks | Minimal |
 | Firewall (UFW) | Network traffic restriction | Negligible |
-
 The security mechanisms introduced provide significant protection while maintaining system efficiency.
 
 # 7. Reflection

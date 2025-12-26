@@ -99,6 +99,7 @@ sudo sysctl -w vm.swappiness=10
 echo "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 Before vs After results (representative)
+
 | Metric (Memory Stress Test)            | Before (swappiness = 60) | After (swappiness = 10) | Improvement            |
 |--------------------------------------|---------------------------|--------------------------|------------------------|
 | RAM used (GB)                         | 3.8 / 4.2                 | 3.8 / 4.2                | Same (expected)        |
@@ -131,10 +132,12 @@ Before vs After results (representative)
 Using noatime reduced metadata overhead, improving disk throughput and lowering average I/O wait time during disk-heavy workloads.
 
 ## Optimisation Summary Table 
-| Optimisation       | Target Bottleneck              | Main Measurable Benefit                          |
-|--------------------|--------------------------------|--------------------------------------------------|
-| Lower swappiness   | Memory pressure / swapping     | Less swap activity, faster response under load   |
-| noatime mount      | Disk metadata overhead         | Higher throughput, lower disk latency            |
+
+| Optimisation        | Target Bottleneck              | Main Measurable Benefit                          |
+|---------------------|--------------------------------|--------------------------------------------------|
+| Lower swappiness    | Memory pressure / swapping     | Reduced swap activity, faster response under load|
+| noatime mount       | Disk metadata overhead         | Higher I/O throughput, lower disk latency        |
+
 
 # 7 Reflection (Critical analysis)
 

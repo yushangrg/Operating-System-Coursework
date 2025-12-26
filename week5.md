@@ -14,6 +14,8 @@ AppArmor Status Check
 ```bash
 sudo apparmor_status
 ```
+<img width="536" height="798" alt="Screenshot 2025-12-26 061518" src="https://github.com/user-attachments/assets/ec714113-0eae-4087-b23a-fa5a9e21981e" />
+
 Observed Output (Summary):
 -AppArmor enabled
 -Profiles loaded

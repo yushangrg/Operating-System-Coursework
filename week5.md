@@ -59,14 +59,46 @@ sudo systemctl status fail2ban
 <img width="1262" height="276" alt="Screenshot 2025-12-25 234339" src="https://github.com/user-attachments/assets/45ba8837-84ac-46e7-abe2-3d69568217b4" />
 
 # 4. Security Baseline Verification Script
-I created security-baseline.sh to run on the server and verify all security configurations from Phases 4 and 5.
+Purpose
 
-Script Path: ```/home/admin/scripts/security-baseline.sh```
+The security-baseline.sh script verifies that all security controls from Weeks 4 and 5 are correctly configured.
 
-Run via SSH from Workstation:
+Script: ```security-baseline.sh```
 ```bash
-ssh admin@server 'bash /home/admin/scripts/security-baseline.sh'
+#!/bin/bash
+# security-baseline.sh
+# Verifies firewall, SSH hardening, AppArmor, automatic updates, and fail2ban
+
+echo "=== SECURITY BASELINE VERIFICATION ==="
+
+echo "[1] Firewall status:"
+sudo ufw status verbose
+
+echo "[2] SSH password authentication:"
+grep "^PasswordAuthentication" /etc/ssh/sshd_config
+
+echo "[3] Root login over SSH:"
+grep "^PermitRootLogin" /etc/ssh/sshd_config
+
+echo "[4] AppArmor status:"
+sudo aa-status | head -n 10
+
+echo "[5] Unattended upgrades status:"
+systemctl is-enabled unattended-upgrades
+
+echo "[6] Fail2Ban status:"
+sudo fail2ban-client status sshd
+
+echo "=== BASELINE CHECK COMPLETE ==="
 ```
+
+Execution (via SSH)
+```bash
+chmod +x security-baseline.sh
+./security-baseline.sh
+```
+![WhatsApp Image 2025-12-26 at 00 31 42](https://github.com/user-attachments/assets/d1a2891b-4b73-40e7-840d-a156a075aa3d)
+
 # 5. Remote Monitoring Script
 Purpose
 

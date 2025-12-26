@@ -13,4 +13,5 @@ The server is deployed as a headless Linux server, administered exclusively via 
 - Automatic security updates enabled
 - AppArmor mandatory access control enforced
 - Fail2ban intrusion prevention enabled
+  
 This audit verifies that these controls are active and correctly configured.

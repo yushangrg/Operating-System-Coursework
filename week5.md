@@ -60,6 +60,12 @@ sudo systemctl status fail2ban
 ```
 <img width="1262" height="276" alt="Screenshot 2025-12-25 234339" src="https://github.com/user-attachments/assets/45ba8837-84ac-46e7-abe2-3d69568217b4" />
 
+## Configure jail for SSH
+```bash
+sudo nano /etc/fail2ban/jail/local
+```
+<img width="759" height="462" alt="Screenshot 2025-12-26 061756" src="https://github.com/user-attachments/assets/1b5fce3b-5ae6-4296-93f7-56f0bd97c106" />
+
 # 4. Security Baseline Verification Script
 Purpose
 

@@ -28,6 +28,22 @@ The coursework uses a dual-system architecture:
 
 All configurations, security controls, scripts, and tests are documented weekly with command-line evidence and explanations.
 
+# Tools/ Technologies USed and References
+
+- Linux Server (Headless)
+- SSH (Key-based Authentication)
+- UFW Firewall
+- Git & GitHub Pages
+- VirtualBox
+
+- University of Roehampton, “CMPN202 Operating Systems Assessment Brief,” 2025. [Online]. Available via Moodle.
+-  E. Masanet, A. Shehabi, N. Lei, S. Smith, and J. Koomey, "Recalibrating global data center 
+energy-use estimates," Science, vol. 367, no. 6481, pp. 984-986, 2020. [Online]. Available: 
+https://www.science.org/doi/10.1126/science.aba3758 
+- J. Koomey, S. Berard, M. Sanchez, and H. Wong, "Implications of historical trends in the 
+electrical efficiency of computing," IEEE Annals of the History of Computing, vol. 33, no. 3, pp. 
+46-54, 2011. [Online]. Available: https://ieeexplore.ieee.org/document/5440129
+
 # Journal Contents
 
 | Week | Topic | Description |

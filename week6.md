@@ -99,12 +99,13 @@ sudo sysctl -w vm.swappiness=10
 echo "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 Before vs After results (representative)
-Metric (Memory Stress Test)	Before (swappiness=60)	After (swappiness=10)	Improvement
-RAM used (GB)	3.8 / 4.2	3.8 / 4.2	Same (expected)
-Swap used (MB)	420	40	↓ 90%
-vmstat si/so (avg)	15 / 12	1 / 1	Much lower paging
-Avg app/service response (ms)	260	180	↓ ~31%
-Notes	noticeable lag under load	smoother under load	less swapping
+| Metric (Memory Stress Test)            | Before (swappiness = 60) | After (swappiness = 10) | Improvement            |
+|--------------------------------------|---------------------------|--------------------------|------------------------|
+| RAM used (GB)                         | 3.8 / 4.2                 | 3.8 / 4.2                | Same (expected)        |
+| Swap used (MB)                        | 420                       | 40                       | ↓ 90%                  |
+| vmstat si/so (avg)                   | 15 / 12                   | 1 / 1                    | Much lower paging      |
+| Avg app/service response time (ms)   | 260                       | 180                      | ↓ ~31%                 |
+| Notes                                | Noticeable lag under load | Smoother under load      | Less swapping          |
 
 Reducing swappiness decreased swap usage and paging activity during memory pressure, improving responsiveness and reducing average response time under load.
 

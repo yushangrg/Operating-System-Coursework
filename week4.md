@@ -36,6 +36,8 @@ Objective: Configure firewall to permit SSH access only from the specific workst
 ```bash
 sudo ufw enable
 ```
+<img width="940" height="387" alt="image" src="https://github.com/user-attachments/assets/eaf0c20a-e6c8-4b9c-a8af-9866ccaee446" />
+
 ## Set default policies:
 ```bash
 sudo ufw default deny incoming
@@ -56,6 +58,8 @@ Objective: Create non-root administrative user with sudo privileges.
 ```bash
 sudo adduser adminuser
 ```
+<img width="940" height="584" alt="image" src="https://github.com/user-attachments/assets/61cabc44-1174-4493-9474-7b8960104993" />
+
 ## Added to sudo group:
 ```bash
 sudo usermod -aG sudo adminuser
@@ -73,6 +77,8 @@ hostname
 uptime
 whoami
 ```
+<img width="709" height="186" alt="image" src="https://github.com/user-attachments/assets/8739b649-dfa7-493c-9eed-6f686f3033fb" />
+
 # 5. Firewall Ruleset Documentation
 Full Ruleset
 ```bash

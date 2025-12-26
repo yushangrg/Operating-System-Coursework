@@ -60,11 +60,10 @@ dd if=/dev/zero of=testfile bs=1G count=1 oflag=direct
 
 # 3.4 Network-Intensive Application: Web Server (nginx)
 ```bash
-iperf3 -c <server_ip> -t 30
-ab -n 10000 -c 100 http://localhost/
+ping -c 20 192.168.56.101
 ```
-Results:
-- Baseline network latency: 0.8ms
-- Under load: Average latency 4.2ms, peaks at 12ms
-- Throughput: Sustained 850Mbps, 92% of theoretical maximum
+<img width="799" height="573" alt="Screenshot 2025-12-26 063037" src="https://github.com/user-attachments/assets/8d424a42-5f8f-4914-816c-046e74c57679" />
+
+# 4. Performance Data Table
+
 
